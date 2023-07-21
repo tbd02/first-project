@@ -6,7 +6,7 @@ html{
 }
 
 body{
-    padding: 200px;
+    /* padding: 200px; */
 }
 
 h4, h2, p {
@@ -123,4 +123,11 @@ ul {
     padding: 0;
     list-style: none;
     opacity: 0.8;
+}
+/* Desktop-first approach */
+@media (max-width: 600px){
+    .monthly-sub,.why-us,.card{
+        width: 100%;
+        height:auto;
+    }
 }
