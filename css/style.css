@@ -6,7 +6,7 @@ html{
 }
 
 body{
-    /* padding: 200px; */
+padding: 25px;
 }
 
 h4, h2, p {
@@ -18,43 +18,38 @@ h4, h2, p {
 }
 /*tạo cho các box xếp gọn gàng bên trong các bõ lớn hơn. Và các box khác trong cái web này sẽ dc inherit cái box-sizing của cái hmlt element. */
 .card {
-    width: 600px;
-    height: 400px;
+    width: 300px;
+    height: 600px;
     box-shadow: 20px 4px 36px 21px rgba(0,0,0,0.1);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .top-sec {
-    width: 100%;
-    height: 45%;
-    padding: 30px;
+    padding: 25px;
 }
 
 .bottom-sec{
-    width: 100%;
-    height: 55%;
-    vertical-align: top;
+    display:flex;
+    flex-direction: column;
     color: white;
 }
 
 .monthly-sub {
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    /* vertical-align la xep 2 cai hop. div len tren cung nhau, phai cho 2 cai hop deu la inline-block trc */
+    flex-basis: 50%;
     background-color: #0BDEB1;
     padding: 25px;
 }
 .why-us {
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
+    flex-basis: 50%;
     background-color: #51e89c;
     padding: 25px;
 }
+
+.why-us h4, ul{
+    margin-left: 15px;
+}
+
 .top-sec h2 {
     color: #0BDEB1;
     margin-bottom: 20px;
@@ -77,57 +72,107 @@ button {
     border-radius: 6px;
     width: 80%;
     margin-top: 25px;
+    margin-left: 15px;
 }
 
 button:hover{
     cursor: pointer;
     background-color: #d5ef64;
     transform: scale(1.2);
-    /* cai transform lam cho button khi hover se phong to len */
+    /*cai transform lam cho button khi hover se phong to len */
 }
  
 #price{
     font-weight: 800;
     font-size: 1.4rem;
+    margin-left: 15px;
 }
 
 .monthly-sub h4{
     margin-bottom: 15px;
+    margin-left: 15px;
 }
 
 .monthly-sub #full-access{
     font-size: 0.8rem;
     opacity: 0.8;
-}
-
-#unit, #price {
-    display: inline-block;
-    /* khi #unit va #price la inline-block thi moi di chuyen 2 cai dc */
+    margin-left: 15px;
 }
 
 .price-container{
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 
 #unit {
     font-size: 0.8rem;
     position: relative;
-    top: -3px;
+    top: -2px;
     opacity: 0.7;
     margin-left: 7px;
     font-size: 0.8rem;
     /* muon di chuyen cai #unit thi phai de no inline-block va sau do de no thanh relative */
 }
+
 ul {
     font-size: 0.8rem;
     padding: 0;
     list-style: none;
     opacity: 0.8;
 }
-/* Desktop-first approach */
-@media (max-width: 600px){
-    .monthly-sub,.why-us,.card{
-        width: 100%;
-        height:auto;
+
+@media (min-width: 610px){
+    .card {
+        width: 600px;
+        height: auto;
+        box-shadow: 20px 4px 36px 21px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .bottom-sec{
+        display:flex;
+        flex-direction: row;
+        color: white;
+    }
+
+    .why-us {
+        flex-basis: 50%;
+        background-color: #51e89c;
+        padding: 25px;
+    }
+
+    .why-us h4, ul{
+        margin-left: 0px;
+    }
+
+    button {
+        background-color: #c0df34;
+        border-color: #c0df34;
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        width: 80%;
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+
+    #price{
+        font-weight: 800;
+        font-size: 1.4rem;
+        margin-left: 0px;
+    }
+
+    .monthly-sub h4{
+        margin-bottom: 15px;
+        margin-left: 0px;
+    }
+
+    .monthly-sub #full-access{
+        font-size: 0.8rem;
+        opacity: 0.8;
+        margin-left: 0px;
     }
 }
